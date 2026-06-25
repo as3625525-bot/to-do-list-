@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0f1226" />
+  <title>MISSION 33</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>MISSION&nbsp;33</h1>
+    <span id="sync-status" class="sync-pill offline">Offline</span>
+  </header>
+
+  <main>
+    <section class="stats">
+      <div class="stat-card">
+        <span class="stat-label">Today's completion</span>
+        <span id="stat-completion" class="stat-value">0%</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Current streak</span>
+        <span id="stat-streak" class="stat-value">0 days</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Tasks today</span>
+        <span id="stat-count" class="stat-value">0 / 0</span>
+      </div>
+    </section>
+
+    <section class="add-task">
+      <input id="task-input" type="text" placeholder="Add a task for today..." />
+      <select id="task-priority" aria-label="Priority">
+        <option value="high">High</option>
+        <option value="medium" selected>Medium</option>
+        <option value="low">Low</option>
+      </select>
+      <button id="add-btn">Add</button>
+    </section>
+
+    <section class="task-list-section">
+      <h2>Today &middot; <span id="today-label"></span></h2>
+      <ul id="task-list" class="task-list"></ul>
+      <p id="empty-msg" class="empty-msg">No tasks yet. Add your first mission above.</p>
+    </section>
+
+    <section class="charts">
+      <div class="chart-tabs">
+        <button class="tab active" data-range="daily">Daily</button>
+        <button class="tab" data-range="weekly">Weekly</button>
+        <button class="tab" data-range="monthly">Monthly</button>
+      </div>
+      <canvas id="perf-chart" height="220"></canvas>
+    </section>
+  </main>
+
+  <footer><small>MISSION 33 &mdash; stay consistent.</small></footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
